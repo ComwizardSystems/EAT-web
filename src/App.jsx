@@ -26,13 +26,13 @@ function App() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg rounded-lg"
+            ? "bg-white/15 backdrop-blur-md shadow-lg rounded-lg"
             : "bg-transparent backdrop-blur-md"
         }`}
       >
         <div className="max-w-full mx-auto px-8 flex justify-between items-center">
           <div>
-            <img src={LOGO} className=" flex w-full   h-full" />
+            <img src={LOGO} className=" flex w-full h-full" />
           </div>
           <ul className="hidden md:flex gap-10">
             {["home", "about", "services", "why-us", "contact"].map((item) => (
