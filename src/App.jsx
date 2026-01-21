@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import LOGO from "./assets/EAT_LOGO.png";
+import grapes from "./assets/grapes.jpg";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -20,8 +21,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans">
-      {/* bg-green-700 ">*/}
+    <div className="min-h-screen font-sans bg-white">
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -32,9 +32,6 @@ function App() {
       >
         <div className="max-w-full mx-auto px-8 flex justify-between items-center">
           <div>
-            {/* <h2 className="text-2xl font-bold text-primary-500 tracking-tight">
-              East Asia Trading
-            </h2>*/}
             <img src={LOGO} className=" flex w-full   h-full" />
           </div>
           <ul className="hidden md:flex gap-10">
@@ -46,7 +43,7 @@ function App() {
                     e.preventDefault();
                     scrollToSection(item);
                   }}
-                  className="text-gray-700 font-medium text-base relative after:content-[''] after:absolute after:bottom-1.25 after:left-0 after:w-0 after:h-0.5 after:bg-primary-500 after:transition-all after:duration-300 hover:text-primary-500 hover:after:w-full"
+                  className="text-gray-700 font-medium text-base relative after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-700 after:transition-all after:duration-300 hover:text-blue-700"
                 >
                   {item.charAt(0).toUpperCase() +
                     item.slice(1).replace("-", " ")}
@@ -60,14 +57,14 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex flex-col justify-center items-center bg-linear-to-br from-primary-50 via-white to-accent-50 py-32 px-4 md:px-8 relative overflow-hidden"
+        className="min-h-7xl flex flex-col justify-center items-center bg-slate-50 py-32 px-4 md:px-8 relative overflow-hidden"
       >
-        <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-primary-500/3 rounded-full animate-pulse-slow"></div>
+        <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-blue-700/3 rounded-full animate-pulse-slow"></div>
         <div className="text-center max-w-4xl z-10 mb-16 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-800 mb-6 leading-tight tracking-tight">
             Fresh Fruits & Vegetables
-            <span className="text-primary-500 block mt-2">
-              Import and Export Excellence
+            <span className="text-blue-700 block mt-2">
+              With Import and Export Excellence
             </span>
           </h1>
           <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed font-normal">
@@ -77,13 +74,13 @@ function App() {
           <div className="flex gap-4 justify-center flex-wrap">
             <button
               onClick={() => scrollToSection("contact")}
-              className="px-8 py-3.5 text-base font-semibold text-primary-500 bg-white rounded-full bg-linear-to-r from-primary-500 to-primary-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className="px-8 py-3.5 text-base font-semibold text-blue-700 rounded-full bg-white border-2 border-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
             >
               Get In Touch
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="px-8 py-3.5 text-base font-semibold text-primary-500 bg-white rounded-full bg-linear-to-r from-primary-500 to-primary-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+              className="px-8 py-3.5 text-base font-semibold text-blue-700 rounded-full bg-white border-2 border-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
             >
               Learn More
             </button>
@@ -97,9 +94,9 @@ function App() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="bg-white/80 backdrop-blur-lg p-6 rounded-2xl text-center min-w-37.5 shadow-md border border-primary-500/10 hover:-translate-y-1 transition-transform duration-300"
+              className="bg-white/90 backdrop-blur p-6 rounded-2xl text-center min-w-64 shadow-md border border-slate-200 hover:-translate-y-1 transition-transform duration-300"
             >
-              <div className="text-4xl font-extrabold text-primary-500 mb-2 leading-none">
+              <div className="text-4xl font-extrabold text-blue-700 mb-2 leading-none">
                 {stat.number}
               </div>
               <div className="text-sm font-medium text-slate-600">
@@ -117,7 +114,7 @@ function App() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
               About Us
             </h2>
-            <p className="text-accent-500 font-semibold text-base tracking-widest uppercase">
+            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
               Trusted Excellence Since 2002
             </p>
           </div>
@@ -148,7 +145,7 @@ function App() {
                     key={feature}
                     className="flex items-center gap-4 font-medium text-base"
                   >
-                    <span className="w-8 h-8 bg-linear-to-br from-primary-500 to-primary-600 text-white rounded-full flex items-center justify-center font-bold text-sm">
+                    <span className="w-8 h-8 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-sm">
                       ✓
                     </span>
                     <span>{feature}</span>
@@ -157,10 +154,12 @@ function App() {
               </div>
             </div>
             <div>
-              <div className="bg-linear-to-br from-primary-50 to-primary-100 rounded-3xl p-12 flex items-center justify-center aspect-4/3 shadow-2xl shadow-primary-500/10">
+              <div className="bg-slate-50 rounded-2xl p-12 flex items-center justify-center aspect-4/3 shadow-2xl shadow-slate-200/50">
                 <div className="text-center">
-                  <div className="text-7xl mb-4">🌱</div>
-                  <p className="text-primary-600 font-semibold text-xl">
+                  <div className="text-7xl mb-4">
+                    <img src={grapes} className=" flex w-full   h-full" />
+                  </div>
+                  <p className="text-blue-700 font-semibold text-xl">
                     Fresh from Farm to You
                   </p>
                 </div>
@@ -171,16 +170,13 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section
-        id="services"
-        className="py-24 bg-linear-to-br from-primary-50 to-white"
-      >
+      <section id="services" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
               Our Products
             </h2>
-            <p className="text-accent-500 font-semibold text-base tracking-widest uppercase">
+            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
               Premium Quality Exports
             </p>
           </div>
@@ -209,7 +205,7 @@ function App() {
             ].map((service) => (
               <div
                 key={service.title}
-                className="bg-white p-10 rounded-3xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary-500/15 border border-primary-500/10"
+                className="bg-white p-10 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50 border border-slate-200"
               >
                 <div className="text-5xl mb-6">{service.icon}</div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">
@@ -231,7 +227,7 @@ function App() {
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
               Why Choose Us
             </h2>
-            <p className="text-accent-500 font-semibold text-base tracking-widest uppercase">
+            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
               The East Asia Advantage
             </p>
           </div>
@@ -259,7 +255,7 @@ function App() {
               },
             ].map((item) => (
               <div key={item.number} className="flex gap-6">
-                <div className="text-5xl font-extrabold text-primary-500/10 leading-none min-w-15">
+                <div className="text-5xl font-extrabold text-blue-700/10 leading-none min-w-15">
                   {item.number}
                 </div>
                 <div>
@@ -277,17 +273,14 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section
-        id="contact"
-        className="py-24 bg-linear-to-br from-primary-50 to-accent-50 via-white"
-      >
+      <section id="contact" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-8 ">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
               Get In Touch
             </h2>
-            <p className="text-accent-500 font-semibold text-base tracking-widest uppercase">
-              Let's Build a Partnership
+            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
+              Let's Build a Connection
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-16">
@@ -306,14 +299,14 @@ function App() {
                     <>
                       <a
                         href="mailto:eat@eastasiatrading.com"
-                        className="text-primary-500 hover:underline"
+                        className="text-blue-700 hover:underline"
                       >
                         eat@eastasiatrading.com
                       </a>{" "}
                       and{" "}
                       <a
                         href="mailto:eat@vsnl.com"
-                        className="text-primary-500 hover:underline"
+                        className="text-blue-700 hover:underline"
                       >
                         eat@vsnl.com
                       </a>
@@ -326,7 +319,7 @@ function App() {
                   content: (
                     <a
                       href="tel:+91-22-22641122"
-                      className="text-primary-500 hover:underline"
+                      className="text-blue-700 hover:underline"
                     >
                       +91-22-2264 1122
                     </a>
@@ -334,7 +327,7 @@ function App() {
                 },
               ].map((item) => (
                 <div key={item.title} className="flex gap-6 items-start">
-                  <div className="text-4xl bg-linear-to-br from-primary-500 to-primary-600 text-white w-14 h-14 rounded-full flex items-center justify-center shrink-0">
+                  <div className="text-4xl bg-blue-700 text-white w-14 h-14 rounded-full flex items-center justify-center shrink-0">
                     {item.icon}
                   </div>
                   <div>
@@ -348,31 +341,31 @@ function App() {
                 </div>
               ))}
             </div>
-            <div className="bg-white p-10 rounded-3xl shadow-xl shadow-gray-500/5">
+            <div className="bg-white p-10 rounded-2xl shadow-xl shadow-slate-200/50">
               <form className="space-y-4">
                 <input
                   type="text"
                   placeholder="Your Name"
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl text-base font-medium focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
                 />
                 <input
                   type="email"
                   placeholder="Your Email"
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl text-base font-medium focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
                 />
                 <input
                   type="text"
                   placeholder="Subject"
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl text-base font-medium focus:outline-none focus:border-primary-500 transition-colors"
+                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
                 />
                 <textarea
                   placeholder="Your Message"
                   rows="5"
-                  className="w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl text-base font-medium focus:outline-none focus:border-primary-500 transition-colors resize-vertical min-h-30"
+                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors resize-vertical min-h-30"
                 ></textarea>
                 <button
                   type="submit"
-                  className="w-full px-8 py-3.5 text-base font-semibold text-white rounded-full bg-linear-to-r from-primary-500 to-primary-600 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                  className="w-full px-8 py-3.5 text-base font-semibold text-white rounded-full bg-blue-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Send Message
                 </button>
@@ -383,7 +376,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-slate-800 text-white py-16">
+      <footer className="bg-slate-900 text-white py-16">
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-1 gap-12 mb-12">
             <div>
