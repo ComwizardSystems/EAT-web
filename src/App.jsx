@@ -4,6 +4,7 @@ import grapes from "./assets/grapes.jpg";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,7 +22,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-white">
+    <div className="min-h-screen font-sans bg-white/15">
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -34,6 +35,30 @@ function App() {
           <div>
             <img src={LOGO} className=" flex w-full h-full" />
           </div>
+
+          {/* Hamburger menu button for mobile */}
+          <button
+            className="md:hidden flex flex-col justify-center items-center gap-1.5 z-50"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                mobileMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+                mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            ></span>
+          </button>
+
+          {/* Desktop menu */}
           <ul className="hidden md:flex gap-10">
             {["home", "about", "services", "why-us", "contact"].map((item) => (
               <li key={item}>
@@ -51,6 +76,34 @@ function App() {
               </li>
             ))}
           </ul>
+
+          {/* Mobile dropdown menu */}
+          <div
+            className={`md:hidden absolute top-full right-0 bg-white shadow-xl rounded-b-lg z-40 transition-all duration-300 overflow-hidden ${
+              mobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <ul className="flex flex-col">
+              {["home", "about", "services", "why-us", "contact"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href={`#${item}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="block px-8 py-3 text-gray-700 font-medium text-base hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                    >
+                      {item.charAt(0).toUpperCase() +
+                        item.slice(1).replace("-", " ")}
+                    </a>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
         </div>
       </nav>
 
