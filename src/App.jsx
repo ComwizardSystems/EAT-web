@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
 import LOGO from "./assets/EAT_LOGO.png";
 import grapes from "./assets/grapes.jpg";
+import Mango from "./assets/kesar.png";
+import cabbage from "./assets/cabbage.png";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeProduct, setActiveProduct] = useState(null);
+  const [selectedFruit, setSelectedFruit] = useState(null);
+  const [selectedVegetable, setSelectedVegetable] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,6 +24,162 @@ function App() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const fruitInfo = {
+    // Chikoo, Custard Apples, Grapes, Jujube, Papaya, Pomergranate.
+    Bananas: {
+      description:
+        "Indian Bananas are quite unlike those found anywhere else. They come in many different varieties both large and small.\t\t\tThe colour of the skin varies and may be bright green to golden yellow. The fruit is yellowish in colour with a slight greenish tinge and is highly nutritious. The fruits appear in a bunch consisting of a number of halfspirals of fruit, which are clearly separated from each other. The skin is easily peeled off to reveal the edible flesh.",
+      Nutritional:
+        "Fat-free, Sodium-free,Cholesterol-free, A good source of fiber, vitamin C, vitamin B6 and potassium",
+      shipping: "Shipped by Air or Sea in ventilated cartons",
+    },
+    Mangoes: {
+      description:
+        "Mango is the King of fruits. India is the largest producer and exporter of Mangoes in the world. India produces some 10 million tonnes of mangoes annually accounting for 52 per cent of the world output. " +
+        "India grows the finest mangoes in the world. Although more than a thousand varieties exist, only around 20 varieties are grown on commercial scale. Most popular Mango varieties are Banganpalli, Neelam, Dusheri, Totapuri, Kesar and delicious Alphonso Mango.",
+      origin:
+        "Alphonso from Ratnagiri, Kesar from Gujarat, Totapuri from South India",
+      season: "April to July (Alphonso), February to April (Kesar)",
+      grade: "Export Grade A",
+      Nutritional:
+        "Low fat, Saturated fat-free, Very low sodium, Cholesterol-free, High in vitamin A and vitamin C",
+      varieties:
+        "Banganpalli, Neelam, Dusheri, Totapuri, Kesar and Alphonso Mango",
+      shipping:
+        "Shipped by Air or Sea in corrugated Boxes of 1 dozen or 2 Dozens",
+    },
+    Papayas: {
+      description:
+        "Tropical delight packed with vitamins, minerals, and enzymes. Great for health-conscious consumers.",
+      origin: "Karnataka, Andhra Pradesh, Maharashtra",
+      season: "Year-round, peak August-October",
+      grade: "Export Premium",
+      packaging: "3kg, 5kg net boxes with tissue paper",
+      varieties: "Red Lady, Pusa Dwarf, Solo",
+      shelfLife: "10-14 days refrigerated",
+    },
+    Oranges: {
+      description:
+        "Juicy and refreshing citrus fruits loaded with Vitamin C. Perfect for fresh juice and snacking.",
+      origin: "Nagpur (Nagpur Santra), Punjab, Maharashtra",
+      season: "November to March",
+      grade: "Premium Export",
+      packaging: "15kg, 20kg ventilated cartons",
+      varieties: "Nagpur, Coorg, Darjeeling, Valencia",
+      shelfLife: "3-4 weeks refrigerated",
+    },
+    Apples: {
+      description:
+        "Crisp and delicious apples from the finest orchards. Excellent for fresh consumption and baking.",
+      origin: "Kashmir, Himachal Pradesh, Uttarakhand",
+      season: "August to November (fresh), Year-round (stored)",
+      grade: "Grade A Export Quality",
+      packaging: "10kg, 18kg cartons with individual trays",
+      varieties: "Red Delicious, Fuji, Gala, Golden Delicious",
+      shelfLife: "4-6 months in controlled storage",
+    },
+  };
+
+  const vegetableInfo = {
+    "French Beans": {
+      description:
+        "A practical slim podded variety, favoured by gourmet restaurants because they are tasty, tender and needs no slicing and other preparations. Beans can be picked at 9cm (4in) in bunches, but can be left to grow to attain maturity at 15-18cm (6-7in) when it will still be stringless and relatively slender (approx. 5/16 to 3/8in thick) in comparison with most varieties. It is always best to pick pods on the young side when flavour and tenderness are at their best.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5kgs to 10 Kgs as per requirement",
+      varieties: "Slim podded gourmet variety",
+      shelfLife: "7-10 days refrigerated",
+    },
+    Okra: {
+      description:
+        "Indian okra, also called 'Ladyfinger' and 'Bhindi' in Hindi. Indian variety of Okra has become very popular in markets for its high quality. Plants are medium tall, vigorous and prolific. Pods are thin, and very tender. Okra is a rich source of many nutrients, including fiber, vitamin B6 and folic acid.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5kgs to 10 Kgs as per requirement",
+      varieties: "Indian Ladyfinger/Bhindi",
+      shelfLife: "5-7 days refrigerated",
+    },
+    Eggplant: {
+      description:
+        "Small egg plants are only about 30 grams (1 Oz.) in weight with bright red purple color. High quality fruits are very popular for making various stuffed food in India and Southern Asia.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
+      varieties: "Small purple variety",
+      shelfLife: "7-10 days refrigerated",
+    },
+    "Bitter Gourd": {
+      description:
+        "This is a typical variety of Indian Bitter Gourds and is very popular for Indian cuisines. An unique appearance of Indian Bitter Gourds is teeth on the fruit skin. This variety produces long green skin fruits, 8-12 inches in length and about 1/4 Lb. in weight. The plant grows vigorously in warm climates and bears lot of fruits for a long time. Bitter Gourd has excellent medicinal virtues. It is antidotal, antipyretic tonic, appetizing, stomachic, antibilious and laxative. The bitter Gourd is also used in native medicines of Asia and Africa.",
+      origin: "India",
+      season: "Year-round, peak in warm climates",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
+      varieties: "Indian variety with teeth on fruit skin",
+      shelfLife: "7-10 days refrigerated",
+    },
+    "Snake Gourd": {
+      description:
+        "A long and curved fruits that appear like snakes hanging on supports or ground. This subtropical plant grows very fast in warm climates.",
+      origin: "India",
+      season: "Year-round in warm climates",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
+      varieties: "Long curved snake-like variety",
+      shelfLife: "7-10 days refrigerated",
+    },
+    Chilli: {
+      description:
+        "Chilli is a tropical and sub-tropical crop grown all over the country in India. India has advantage of producing about 40 varieties of chillies possessing different range of pungency, colour, size and shape.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
+      varieties: "40 varieties with different pungency, colour, size and shape",
+      shelfLife: "2-3 weeks refrigerated",
+    },
+    "Bottle Gourd": {
+      description:
+        "Various types are available depending upon their appearances i.e bottle shaped, trumpet shaped etc. The fruits are large and come in different shapes with numerous long white seeds.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging:
+        "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
+      varieties: "Bottle shaped, trumpet shaped",
+      shelfLife: "7-10 days refrigerated",
+    },
+    Cabbage: {
+      description:
+        "Cabbage is one of the oldest vegetable cultivated in the world, believed to be since 2500 BC by Greeks and Romans. In India, it was introduced by the Moghuls and popularised by the British. Cabbage is mostly grown as a winter crop in the plains in India.",
+      origin: "India",
+      season: "Winter crop in plains",
+      grade: "Premium Export",
+      packaging: "In corrugated boxes exported by airfreight or sea freight",
+      varieties: "Various cultivated varieties",
+      shelfLife: "4-6 weeks refrigerated",
+    },
+    Lemongrass: {
+      description:
+        "Its sensoric quality is fresh and pleasant, remotely reminiscent of tangerines. The origin of this plant is in Southern India and Sri Lanka.",
+      origin: "Southern India, Sri Lanka",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging: "Export grade packaging",
+      varieties: "Southern Indian variety",
+      shelfLife: "7-10 days refrigerated",
+    },
   };
 
   return (
@@ -233,45 +394,330 @@ function App() {
               Premium Quality Exports
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: "🍎",
+                icon: "mango",
                 title: "Fresh Fruits",
                 desc: "Wide variety of premium quality fruits sourced from the finest farms across India",
+                clickable: true,
               },
               {
-                icon: "🥬",
+                icon: "cabbage",
                 title: "Fresh Vegetables",
                 desc: "Farm-fresh vegetables with strict quality control and proper handling",
+                clickable: true,
               },
               {
                 icon: "🌍",
                 title: "Global Export",
                 desc: "Seamless export services with expertise in international trade regulations",
               },
-              {
-                icon: "📦",
-                title: "Packaging & Logistics",
-                desc: "Professional packaging ensuring optimal freshness during transit",
-              },
+              // {
+              //   icon: "📦",
+              //   title: "Packaging & Logistics",
+              //   desc: "Professional packaging ensuring optimal freshness during transit",
+              // },
             ].map((service) => (
               <div
                 key={service.title}
-                className="bg-white p-10 rounded-2xl text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50 border border-slate-200"
+                className={`bg-white p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 ${
+                  service.clickable
+                    ? "cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50"
+                    : ""
+                }`}
+                onClick={() =>
+                  service.clickable && setActiveProduct(service.title)
+                }
               >
-                <div className="text-5xl mb-6">{service.icon}</div>
+                <div className="text-5xl mb-6">
+                  {service.icon === "mango" ? (
+                    <img
+                      src={Mango}
+                      className="w-20 h-20 mx-auto"
+                      alt="Mango"
+                    />
+                  ) : service.icon === "cabbage" ? (
+                    <img
+                      src={cabbage}
+                      className="w-20 h-20 mx-auto"
+                      alt="Cabbage"
+                    />
+                  ) : (
+                    service.icon
+                  )}
+                </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-4">
                   {service.title}
                 </h3>
                 <p className="text-base leading-relaxed text-slate-600">
                   {service.desc}
                 </p>
+                {service.clickable && (
+                  <p className="text-sm text-blue-700 font-semibold mt-4">
+                    Click to view details →
+                  </p>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Product Overlay Menu - Fresh Fruits */}
+      {activeProduct === "Fresh Fruits" && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          onClick={() => setActiveProduct(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-8">
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-4">
+                  <img src={Mango} className="w-16 h-16" alt="Mango" />
+                  <h3 className="text-3xl font-bold text-slate-800">
+                    Fresh Fruits
+                  </h3>
+                </div>
+                <div className="flex items-center gap-4">
+                  {selectedFruit && (
+                    <button
+                      onClick={() => setSelectedFruit(null)}
+                      className="text-sm text-blue-700 hover:text-blue-800 font-medium"
+                    >
+                      ← Back to list
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setActiveProduct(null)}
+                    className="text-gray-500 hover:text-gray-700 transition-colors"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="space-y-6">
+                {!selectedFruit && (
+                  <div className="p-6 bg-red-50 rounded-xl border border-red-100">
+                    <ul className="space-y-2 text-gray-700">
+                      {[
+                        "Bananas",
+                        "Mangoes",
+                        "Papayas",
+                        "Oranges",
+                        "Apples",
+                      ].map((item) => (
+                        <li
+                          key={item}
+                          onClick={() => setSelectedFruit(item)}
+                          className="cursor-pointer hover:text-red-700 hover:font-semibold transition-colors"
+                        >
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {selectedFruit && fruitInfo[selectedFruit] && (
+                  <div className="p-6 bg-linear-to-r from-red-50 to-orange-50 rounded-xl border-2 border-blue-200 animate-fade-in">
+                    <h4 className="text-2xl font-bold text-slate-800 mb-3">
+                      {selectedFruit}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                      {fruitInfo[selectedFruit].description}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Origin:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].origin}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Season:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].season}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Grade:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].grade}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Nutritional Info:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].Nutritional}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
+                          Varieties:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].varieties}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
+                          Shipping Information:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].shipping}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {!selectedFruit && (
+                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    Click on any fruit to view detailed information!
+                  </p>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Product Overlay Menu - Fresh Vegetables */}
+      {activeProduct === "Fresh Vegetables" && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+          onClick={() => setActiveProduct(null)}
+        >
+          <div
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-8">
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center gap-4">
+                  <img src={cabbage} className="w-16 h-16" alt="Cabbage" />
+                  <h3 className="text-3xl font-bold text-slate-800">
+                    Fresh Vegetables
+                  </h3>
+                </div>
+                <div className="flex items-center gap-4">
+                  {selectedVegetable && (
+                    <button
+                      onClick={() => setSelectedVegetable(null)}
+                      className="text-sm text-blue-700 hover:text-blue-800 font-medium"
+                    >
+                      ← Back to list
+                    </button>
+                  )}
+                  <button
+                    onClick={() => setActiveProduct(null)}
+                    className="text-gray-500 hover:text-gray-700 transition-colors"
+                  >
+                    <svg
+                      className="w-8 h-8"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div className="space-y-6">
+                {!selectedVegetable && (
+                  <div className="p-6 bg-green-50 rounded-xl border border-green-100">
+                    <ul className="space-y-2 text-gray-700">
+                      {[
+                        "French Beans",
+                        "Okra",
+                        "Eggplant",
+                        "Bitter Gourd",
+                        "Snake Gourd",
+                        "Chilli",
+                        "Bottle Gourd",
+                        "Cabbage",
+                        "Lemongrass",
+                      ].map((item) => (
+                        <li
+                          key={item}
+                          onClick={() => setSelectedVegetable(item)}
+                          className="cursor-pointer hover:text-green-700 hover:font-semibold transition-colors"
+                        >
+                          • {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {selectedVegetable && vegetableInfo[selectedVegetable] && (
+                  <div className="p-6 bg-linear-to-r from-green-50 to-lime-50 rounded-xl border-2 border-blue-200 animate-fade-in">
+                    <h4 className="text-2xl font-bold text-slate-800 mb-3">
+                      {selectedVegetable}
+                    </h4>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      {vegetableInfo[selectedVegetable].description}
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Origin:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].origin}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Season:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].season}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Grade:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].grade}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg">
+                        <span className="font-semibold text-gray-600">
+                          Packaging:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].packaging}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
+                          Varieties:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].varieties}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
+                          Shelf Life:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].shelfLife}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Why Choose Us Section */}
       <section id="why-us" className="py-24 bg-white">
