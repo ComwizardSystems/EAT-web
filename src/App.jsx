@@ -172,13 +172,43 @@ function App() {
     },
     Lemongrass: {
       description:
-        "Its sensoric quality is fresh and pleasant, remotely reminiscent of tangerines. The origin of this plant is in Southern India and Sri Lanka.",
+        "This tropical perennial grass is grown as an annual and makes a very handsome ornamental edible. The fibrous leaves have a very strong lemon aroma and are source of lemongrass oil that is used to flavour candy, ice cream and pastries. Made into a tea, it can help with digestive problems.",
       origin: "Southern India, Sri Lanka",
       season: "Year-round",
       grade: "Premium Export",
       packaging: "Export grade packaging",
       varieties: "Southern Indian variety",
       shelfLife: "7-10 days refrigerated",
+    },
+    "Cape Gooseberry": {
+      description:
+        "A delicious and easy to grow dessert member of tomato family, producing orange berries up to 3cm (1in) across which are a tangy sweet mixture of pineapple and strawberry. Each fruit is enclosed in a papery Chinese lantern-like casing. Delicious on their own, topped with fresh cream, or made into jams, pie fillings etc.",
+      origin: "India",
+      season: "Year-round, best in sunny sheltered sites or cool greenhouses",
+      grade: "Premium Export",
+      packaging: "Export grade packaging",
+      varieties: "Orange berry variety",
+      shelfLife: "7-10 days refrigerated",
+    },
+    Potatoes: {
+      description:
+        "Potatoes are classified as long, round whites, round reds or sweet. Round whites are usually large, round or oval with light to medium skin. The flesh is white or yellow. Sweet potatoes have sweet-tasting orange flesh with reddish skin.",
+      origin: "India",
+      season: "Year-round (stored)",
+      grade: "Premium Export",
+      packaging: "Corrugated boxes",
+      varieties: "Long, Round Whites, Round Reds, Sweet Potatoes",
+      shelfLife: "4-6 months in proper storage",
+    },
+    Onions: {
+      description:
+        "The onion originated in Asia, first written record appeared in Mesopotamia (now part of Iraq) dated 2400 BC. It spread throughout world and was for centuries regarded as a poor person's fare, eaten raw with a chunk of bread. Popular varieties are of cooking onions and are available all year round, thanks to modern storage methods. Fat-free, Saturated fat-free, Sodium-free, Cholesterol-free, Low in calories, A good source of vitamin C.",
+      origin: "India",
+      season: "Year-round",
+      grade: "Premium Export",
+      packaging: "Corrugated boxes",
+      varieties: "Cooking onions",
+      shelfLife: "6-8 months in proper storage",
     },
   };
 
@@ -581,11 +611,7 @@ function App() {
                     </div>
                   </div>
                 )}
-                {!selectedFruit && (
-                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
-                    Click on any fruit to view detailed information!
-                  </p>
-                )}
+                {!selectedFruit}
               </div>
             </div>
           </div>
@@ -653,6 +679,9 @@ function App() {
                         "Bottle Gourd",
                         "Cabbage",
                         "Lemongrass",
+                        "Cape Gooseberry",
+                        "Potatoes",
+                        "Onions",
                       ].map((item) => (
                         <li
                           key={item}
