@@ -27,28 +27,73 @@ function App() {
   };
 
   const fruitInfo = {
-    // Chikoo, Custard Apples, Grapes, Jujube, Papaya, Pomergranate.
-    Bananas: {
-      description:
-        "Indian Bananas are quite unlike those found anywhere else. They come in many different varieties both large and small.\t\t\tThe colour of the skin varies and may be bright green to golden yellow. The fruit is yellowish in colour with a slight greenish tinge and is highly nutritious. The fruits appear in a bunch consisting of a number of halfspirals of fruit, which are clearly separated from each other. The skin is easily peeled off to reveal the edible flesh.",
-      Nutritional:
-        "Fat-free, Sodium-free,Cholesterol-free, A good source of fiber, vitamin C, vitamin B6 and potassium",
-      shipping: "Shipped by Air or Sea in ventilated cartons",
-    },
     Mangoes: {
       description:
-        "Mango is the King of fruits. India is the largest producer and exporter of Mangoes in the world. India produces some 10 million tonnes of mangoes annually accounting for 52 per cent of the world output. " +
-        "India grows the finest mangoes in the world. Although more than a thousand varieties exist, only around 20 varieties are grown on commercial scale. Most popular Mango varieties are Banganpalli, Neelam, Dusheri, Totapuri, Kesar and delicious Alphonso Mango.",
+        "Mango is the King of fruits. India is the largest producer and exporter of Mangoes in the world. India produces some 10 million tonnes of mangoes annually accounting for 52 per cent of the world output. India grows the finest mangoes in the world. Although more than a thousand varieties exist, only around 20 varieties are grown on commercial scale. Most popular Mango varieties are Banganpalli, Neelam, Dusheri, Totapuri, Kesar and delicious Alphonso Mango.",
       origin:
         "Alphonso from Ratnagiri, Kesar from Gujarat, Totapuri from South India",
       season: "April to July (Alphonso), February to April (Kesar)",
       grade: "Export Grade A",
-      Nutritional:
-        "Low fat, Saturated fat-free, Very low sodium, Cholesterol-free, High in vitamin A and vitamin C",
       varieties:
         "Banganpalli, Neelam, Dusheri, Totapuri, Kesar and Alphonso Mango",
-      shipping:
-        "Shipped by Air or Sea in corrugated Boxes of 1 dozen or 2 Dozens",
+      packaging: "Corrugated Boxes of 1 dozen or 2 Dozens",
+      shipping: "By Air or Sea",
+      shelfLife: "10-14 days at room temperature",
+    },
+    Bananas: {
+      description:
+        "Indian Bananas are quite unlike those found anywhere else. They come in many different varieties both large and small. The colour of the skin varies and may be bright green to golden yellow. The fruit is yellowish in colour with a slight greenish tinge and is highly nutritious. The fruits appear in a bunch consisting of a number of halfspirals of fruit, which are clearly separated from each other. The skin is easily peeled off to reveal the edible flesh.",
+      origin: "India",
+      season: "Year-round availability",
+      grade: "Premium Export Quality",
+      varieties: "Cavendish, Robusta, Red Banana, Poovan",
+      packaging: "Ventilated cartons",
+      shipping: "By Air or Sea",
+      shelfLife: "5-7 days at room temperature",
+    },
+    Chikoo: {
+      description:
+        "Chikoo, also known as Sapodilla, is a tropical fruit with a sweet, malty flavor. The fruit has a grainy texture similar to a pear. It is rich in vitamins and minerals.",
+      origin: "India",
+      season: "Year-round, peak winter months",
+      grade: "Premium Export",
+      varieties: "Kalipatti, Cricket Ball",
+      packaging: "Corrugated boxes with cushioning",
+      shipping: "By Air",
+      shelfLife: "7-10 days at room temperature",
+    },
+    "Custard Apples": {
+      description:
+        "Custard apples, also known as Sitaphal, have a creamy, sweet flesh with a custard-like consistency. The fruit is rich in antioxidants and Vitamin C.",
+      origin: "India",
+      season: "August to November",
+      grade: "Premium Export",
+      varieties: "Washington, Balanagar, Red Sitaphal",
+      packaging: "Corrugated boxes with individual padding",
+      shipping: "By Air",
+      shelfLife: "5-7 days at room temperature",
+    },
+    Grapes: {
+      description:
+        "Premium quality grapes from India's finest vineyards. Known for their sweetness, crispness, and excellent shelf life. India is a major exporter of table grapes.",
+      origin: "Maharashtra, Karnataka, Andhra Pradesh",
+      season: "January to April",
+      grade: "Export Premium",
+      varieties: "Thompson Seedless, Flame Seedless, Bangalore Blue",
+      packaging: "Ventilated cartons with padding",
+      shipping: "By Air or Sea",
+      shelfLife: "4-6 weeks refrigerated",
+    },
+    Jujube: {
+      description:
+        "Jujube, also known as Indian Ber or Bor, is a small sweet fruit with a crisp texture. It is highly nutritious and used in traditional medicine.",
+      origin: "India",
+      season: "September to December",
+      grade: "Premium Export",
+      varieties: "Wild and cultivated varieties",
+      packaging: "Corrugated boxes",
+      shipping: "By Air",
+      shelfLife: "7-10 days at room temperature",
     },
     Papayas: {
       description:
@@ -56,29 +101,21 @@ function App() {
       origin: "Karnataka, Andhra Pradesh, Maharashtra",
       season: "Year-round, peak August-October",
       grade: "Export Premium",
-      packaging: "3kg, 5kg net boxes with tissue paper",
       varieties: "Red Lady, Pusa Dwarf, Solo",
+      packaging: "3kg, 5kg net boxes with tissue paper",
+      shipping: "By Air",
       shelfLife: "10-14 days refrigerated",
     },
-    Oranges: {
+    Pomegranate: {
       description:
-        "Juicy and refreshing citrus fruits loaded with Vitamin C. Perfect for fresh juice and snacking.",
-      origin: "Nagpur (Nagpur Santra), Punjab, Maharashtra",
-      season: "November to March",
-      grade: "Premium Export",
-      packaging: "15kg, 20kg ventilated cartons",
-      varieties: "Nagpur, Coorg, Darjeeling, Valencia",
-      shelfLife: "3-4 weeks refrigerated",
-    },
-    Apples: {
-      description:
-        "Crisp and delicious apples from the finest orchards. Excellent for fresh consumption and baking.",
-      origin: "Kashmir, Himachal Pradesh, Uttarakhand",
-      season: "August to November (fresh), Year-round (stored)",
-      grade: "Grade A Export Quality",
-      packaging: "10kg, 18kg cartons with individual trays",
-      varieties: "Red Delicious, Fuji, Gala, Golden Delicious",
-      shelfLife: "4-6 months in controlled storage",
+        "Premium pomegranates with juicy, ruby-red arils. Known for their sweet-tart flavor and high antioxidant content. India is a leading producer and exporter.",
+      origin: "Maharashtra, Karnataka, Gujarat",
+      season: "August to February",
+      grade: "Export Grade A",
+      varieties: "Bhagwa, Kesar, Ganesh, Mridula",
+      packaging: "Corrugated boxes with foam padding",
+      shipping: "By Air",
+      shelfLife: "6-8 weeks refrigerated",
     },
   };
 
@@ -92,6 +129,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5kgs to 10 Kgs as per requirement",
       varieties: "Slim podded gourmet variety",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     Okra: {
@@ -103,6 +141,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5kgs to 10 Kgs as per requirement",
       varieties: "Indian Ladyfinger/Bhindi",
+      shipping: "By Air",
       shelfLife: "5-7 days refrigerated",
     },
     Eggplant: {
@@ -114,6 +153,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
       varieties: "Small purple variety",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     "Bitter Gourd": {
@@ -125,6 +165,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
       varieties: "Indian variety with teeth on fruit skin",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     "Snake Gourd": {
@@ -136,6 +177,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
       varieties: "Long curved snake-like variety",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     Chilli: {
@@ -147,6 +189,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
       varieties: "40 varieties with different pungency, colour, size and shape",
+      shipping: "By Air",
       shelfLife: "2-3 weeks refrigerated",
     },
     "Bottle Gourd": {
@@ -158,6 +201,7 @@ function App() {
       packaging:
         "Packed in corrugated boxes of 5 Kg to 10 Kg as per requirement",
       varieties: "Bottle shaped, trumpet shaped",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     Cabbage: {
@@ -168,6 +212,7 @@ function App() {
       grade: "Premium Export",
       packaging: "In corrugated boxes exported by airfreight or sea freight",
       varieties: "Various cultivated varieties",
+      shipping: "By Air or sea freight",
       shelfLife: "4-6 weeks refrigerated",
     },
     Lemongrass: {
@@ -178,6 +223,7 @@ function App() {
       grade: "Premium Export",
       packaging: "Export grade packaging",
       varieties: "Southern Indian variety",
+      shipping: "By Air",
       shelfLife: "7-10 days refrigerated",
     },
     "Cape Gooseberry": {
@@ -188,6 +234,7 @@ function App() {
       grade: "Premium Export",
       packaging: "Export grade packaging",
       varieties: "Orange berry variety",
+      shipping: "By Air or sea",
       shelfLife: "7-10 days refrigerated",
     },
     Potatoes: {
@@ -198,6 +245,7 @@ function App() {
       grade: "Premium Export",
       packaging: "Corrugated boxes",
       varieties: "Long, Round Whites, Round Reds, Sweet Potatoes",
+      shipping: "By Air or Sea",
       shelfLife: "4-6 months in proper storage",
     },
     Onions: {
@@ -208,6 +256,7 @@ function App() {
       grade: "Premium Export",
       packaging: "Corrugated boxes",
       varieties: "Cooking onions",
+      shipping: "By Air or Sea",
       shelfLife: "6-8 months in proper storage",
     },
   };
@@ -501,7 +550,7 @@ function App() {
           onClick={() => setActiveProduct(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in"
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-screen overflow-y-auto shadow-2xl animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-8">
@@ -546,11 +595,14 @@ function App() {
                   <div className="p-6 bg-red-50 rounded-xl border border-red-100">
                     <ul className="space-y-2 text-gray-700">
                       {[
-                        "Bananas",
                         "Mangoes",
+                        "Bananas",
+                        "Chikoo",
+                        "Custard Apples",
+                        "Grapes",
+                        "Jujube",
                         "Papayas",
-                        "Oranges",
-                        "Apples",
+                        "Pomegranate",
                       ].map((item) => (
                         <li
                           key={item}
@@ -592,9 +644,9 @@ function App() {
                       </div>
                       <div className="bg-white/80 p-3 rounded-lg">
                         <span className="font-semibold text-gray-600">
-                          Nutritional Info:
+                          Packaging:
                         </span>{" "}
-                        {fruitInfo[selectedFruit].Nutritional}
+                        {fruitInfo[selectedFruit].packaging}
                       </div>
                       <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
                         <span className="font-semibold text-gray-600">
@@ -604,14 +656,24 @@ function App() {
                       </div>
                       <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
                         <span className="font-semibold text-gray-600">
-                          Shipping Information:
+                          Shipping:
                         </span>{" "}
                         {fruitInfo[selectedFruit].shipping}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
+                          Shelf Life:
+                        </span>{" "}
+                        {fruitInfo[selectedFruit].shelfLife}
                       </div>
                     </div>
                   </div>
                 )}
-                {!selectedFruit}
+                {!selectedFruit && (
+                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    Click on any fruit to view detailed information!
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -625,7 +687,7 @@ function App() {
           onClick={() => setActiveProduct(null)}
         >
           <div
-            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in"
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-screen overflow-y-auto shadow-2xl animate-fade-in"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="p-8">
@@ -735,12 +797,23 @@ function App() {
                       </div>
                       <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
                         <span className="font-semibold text-gray-600">
+                          Shipping:
+                        </span>{" "}
+                        {vegetableInfo[selectedVegetable].shipping}
+                      </div>
+                      <div className="bg-white/80 p-3 rounded-lg md:col-span-2">
+                        <span className="font-semibold text-gray-600">
                           Shelf Life:
                         </span>{" "}
                         {vegetableInfo[selectedVegetable].shelfLife}
                       </div>
                     </div>
                   </div>
+                )}
+                {!selectedVegetable && (
+                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
+                    Click on any vegetable to view detailed information!
+                  </p>
                 )}
               </div>
             </div>
