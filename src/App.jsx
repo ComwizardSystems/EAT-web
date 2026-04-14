@@ -3,6 +3,7 @@ import LOGO from "./assets/EAT_LOGO.png";
 import grapes from "./assets/grapes.jpg";
 import Mango from "./assets/kesar.png";
 import cabbage from "./assets/cabbage.png";
+import bgpic from "./assets/fruitdance.png";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -262,7 +263,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-white/15">
+    <div
+      className="min-h-screen font-sans " //bg-white/15
+      style={{
+        backgroundImage: `url(${bgpic})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+      }}
+    >
       {/* Navigation */}
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -350,9 +359,9 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-7xl flex flex-col justify-center items-center bg-slate-50 py-32 px-4 md:px-8 relative overflow-hidden"
+        className="min-h-7xl flex flex-col justify-center items-center bg-slate-50/80 py-32 px-4 md:px-8 relative overflow-hidden"
       >
-        <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-blue-700/3 rounded-full animate-pulse-slow"></div>
+        {/* <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-blue-700/3 rounded-full animate-pulse-slow"></div>*/}
         <div className="text-center max-w-4xl z-10 mb-16 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-800 mb-6 leading-tight tracking-tight">
             Fresh Fruits & Vegetables
@@ -463,7 +472,7 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 bg-slate-50">
+      <section id="services" className="py-24 bg-slate-50/60">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
@@ -874,7 +883,7 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-slate-50">
+      <section id="contact" className="py-24 bg-slate-50/80">
         <div className="max-w-7xl mx-auto px-8 ">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
