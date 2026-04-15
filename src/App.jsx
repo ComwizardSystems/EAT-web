@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import LOGO from "./assets/EAT_LOGO.png";
-import grapes from "./assets/grapes.jpg";
-import Mango from "./assets/kesar.png";
-import cabbage from "./assets/cabbage.png";
-import bgpic from "./assets/fruitdance.png";
+// import grapes from "./assets/grapes.jpg";
+import Mango from "./assets/kesari.png";
+import cabbage from "./assets/cabbage1.png";
+import textile from "./assets/textile.png";
+import footwear from "./assets/footwear.png";
+import jewelry from "./assets/jewelry.png";
+import export1 from "./assets/export.png";
+import bgpic from "./assets/fruitdance1.png";
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -317,7 +321,7 @@ function App() {
                     e.preventDefault();
                     scrollToSection(item);
                   }}
-                  className="text-gray-700 font-medium text-base relative after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-700 after:transition-all after:duration-300 hover:text-blue-700"
+                  className="text-gray-700 font-medium text-base relative after:content-[''] after:absolute after:bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-emerald-700 after:transition-all after:duration-300 hover:text-slate-800"
                 >
                   {item.charAt(0).toUpperCase() +
                     item.slice(1).replace("-", " ")}
@@ -343,7 +347,7 @@ function App() {
                         scrollToSection(item);
                         setMobileMenuOpen(false);
                       }}
-                      className="block px-8 py-3 text-gray-700 font-medium text-base hover:bg-blue-50 hover:text-blue-700 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
+                      className="block px-8 py-3 text-gray-700 font-medium text-base hover:bg-indigo-50 hover:text-slate-800 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
                     >
                       {item.charAt(0).toUpperCase() +
                         item.slice(1).replace("-", " ")}
@@ -359,13 +363,13 @@ function App() {
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-7xl flex flex-col justify-center items-center bg-slate-50/80 py-32 px-4 md:px-8 relative overflow-hidden"
+        className="min-h-7xl flex flex-col justify-center items-center bg-slate-50/40 py-32 px-4 md:px-8 relative overflow-hidden"
       >
-        {/* <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-blue-700/3 rounded-full animate-pulse-slow"></div>*/}
+        {/* <div className="absolute top-[-50%] right-[-50%] w-full h-[200%] bg-indigo-700/3 rounded-full animate-pulse-slow"></div>*/}
         <div className="text-center max-w-4xl z-10 mb-16 animate-fade-in-up">
           <h1 className="text-5xl md:text-7xl font-extrabold text-slate-800 mb-6 leading-tight tracking-tight">
             Fresh Fruits & Vegetables
-            <span className="text-blue-700 block mt-2">
+            <span className="text-slate-800 block mt-2">
               With Import and Export Excellence
             </span>
           </h1>
@@ -376,13 +380,13 @@ function App() {
           <div className="flex gap-4 justify-center flex-wrap">
             <button
               onClick={() => scrollToSection("contact")}
-              className="px-8 py-3.5 text-base font-semibold text-blue-700 rounded-full bg-white border-2 border-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
+              className="px-8 py-3.5 text-base font-semibold text-slate-800 rounded-full bg-white border-2 border-emerald-700 hover:bg-emerald-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
             >
               Get In Touch
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="px-8 py-3.5 text-base font-semibold text-blue-700 rounded-full bg-white border-2 border-blue-700 hover:bg-blue-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
+              className="px-8 py-3.5 text-base font-semibold text-slate-800 rounded-full bg-white border-2 border-emerald-700 hover:bg-emerald-700 hover:text-white transition-all duration-300 animate-fade-in-up hover:-translate-y-1"
             >
               Learn More
             </button>
@@ -398,7 +402,7 @@ function App() {
               key={stat.label}
               className="bg-white/90 backdrop-blur p-6 rounded-2xl text-center min-w-64 shadow-md border border-slate-200 hover:-translate-y-1 transition-transform duration-300"
             >
-              <div className="text-4xl font-extrabold text-blue-700 mb-2 leading-none">
+              <div className="text-4xl font-extrabold text-slate-800 mb-2 leading-none">
                 {stat.number}
               </div>
               <div className="text-sm font-medium text-slate-600">
@@ -410,60 +414,148 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 bg-white">
+      <section id="about" className="py-24 bg-white/40">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
-              About Us
+              About East Asia Group
             </h2>
-            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
-              Trusted Excellence Since 2002
+            <p className="text-slate-800 font-semibold text-base tracking-widest uppercase">
+              Your Trusted Partner in Global Trade
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <p className="text-lg leading-relaxed text-slate-600">
-                East Asia Trading is one of the most reputed exporters and
-                importers of fresh fruits and vegetables from India, serving
-                global markets for more than two decades.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-600">
-                With our extensive experience and deep industry knowledge, we've
-                built lasting relationships with organizations worldwide who
-                value quality, consistency, and reliability.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-600">
-                We are constantly striving towards customer satisfaction through
-                in-house R&D, ensuring that we stay at the forefront of the
-                industry while maintaining our commitment to excellence.
-              </p>
-              <div className="space-y-3 mt-8">
-                {[
-                  "Quality Assurance",
-                  "Consistent Supply",
-                  "Global Standards",
-                ].map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-center gap-4 font-medium text-base"
-                  >
-                    <span className="w-8 h-8 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-sm">
-                      ✓
-                    </span>
-                    <span>{feature}</span>
-                  </div>
-                ))}
+          <div className="bg-white rounded-2xl p-8">
+            <div className="space-y-16">
+              {/* Welcome Section */}
+              <div className="text-center max-w-4xl mx-auto">
+                <h3 className="text-3xl font-bold text-slate-800 mb-6">
+                  Welcome to East Asia Group of Companies
+                </h3>
+                <p className="text-xl text-slate-600 mb-8">
+                  Your Trusted Partner in Global Trade from India Since 1978.
+                </p>
+                <p className="text-lg text-slate-600 leading-relaxed mb-8">
+                  East Asia Group of Companies is a dynamic and reliable Govt
+                  recognised export house, sourcing partner, and indenting agent
+                  specializing in connecting Indian manufacturers with global
+                  markets. With a strong foundation in international trade, we
+                  serve as a bridge between quality Indian products and buyers
+                  across Middle East, Europe, Africa and beyond.
+                </p>
               </div>
-            </div>
-            <div>
-              <div className="bg-slate-50 rounded-2xl p-12 flex items-center justify-center aspect-4/3 shadow-2xl shadow-slate-200/50">
-                <div className="text-center">
-                  <div className="text-7xl mb-4">
-                    <img src={grapes} className=" flex w-full   h-full" />
+
+              {/* Who We Are */}
+              <div className="text-center max-w-4xl mx-auto ">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  Who We Are
+                </h3>
+                <p className="text-lg text-slate-600 leading-relaxed mb-6">
+                  We are a professionally managed group committed to delivering
+                  excellence in export services, sourcing solutions, and trade
+                  facilitation. With deep market knowledge and a robust supplier
+                  network across India, we ensure that our clients receive the
+                  best products at competitive prices with consistent quality
+                  and timely delivery.
+                </p>
+              </div>
+
+              {/* What We Do */}
+              <div className="max-w-4xl mx-auto">
+                <h3 className="text-2xl font-bold text-slate-800 mb-6 text-center">
+                  What We Do
+                </h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="p-8 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+                    <div className="text-4xl mb-4">
+                      <svg
+                        className="w-10 h-10 mx-auto text-slate-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle cx="12" cy="12" r="10" />
+
+                        <line x1="12" y1="2" x2="12" y2="22" />
+                        <ellipse cx="12" cy="12" rx="5" ry="10" />
+
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path d="M3.5 8 Q 12 6.5 20.5 8" />
+                        <path d="M3.5 16 Q 12 17.5 20.5 16" />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-800 mb-3">
+                      Export Services
+                    </h4>
+                    <p className="text-base text-slate-600 leading-relaxed">
+                      We export a wide range of high-quality Indian products to
+                      international markets, ensuring compliance with global
+                      standards and seamless logistics.
+                    </p>
                   </div>
-                  <p className="text-blue-700 font-semibold text-xl">
-                    Fresh from Farm to You
-                  </p>
+                  <div className="p-8 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+                    <div className="text-4xl mb-4">
+                      <svg
+                        className="w-10 h-10 mx-auto text-slate-800"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={1.5}
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-800 mb-3">
+                      Sourcing Solutions
+                    </h4>
+                    <p className="text-base text-slate-600 leading-relaxed">
+                      As experienced sourcing agents, we identify reliable
+                      manufacturers, negotiate competitive pricing, and maintain
+                      strict quality control to meet buyer requirements.
+                    </p>
+                  </div>
+                  <div className="p-8 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+                    <div className="text-4xl mb-4">
+                      <svg
+                        className="w-10 h-10 mx-auto text-slate-800"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle cx="12" cy="12" r="9" />
+                        <ellipse cx="12" cy="12" rx="4" ry="9" />
+                        <line x1="3" y1="12" x2="21" y2="12" />
+
+                        <path
+                          d="M2 14 C 2 18 10 22 22 10"
+                          strokeWidth="1.5"
+                          strokeDasharray="2 2"
+                        />
+
+                        <polyline
+                          points="18 10 22 10 22 14"
+                          strokeWidth="1.5"
+                        />
+                      </svg>
+                    </div>
+                    <h4 className="text-xl font-semibold text-slate-800 mb-3">
+                      Indenting & Trade Facilitation
+                    </h4>
+                    <p className="text-base text-slate-600 leading-relaxed">
+                      We act as trusted intermediaries between buyers and
+                      sellers, ensuring smooth transactions, transparent
+                      dealings, and long-term business relationships.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -471,83 +563,140 @@ function App() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 bg-slate-50/60">
+      {/* Our Products Section */}
+      <section id="services" className="py-24 bg-slate-50/40">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
-              Our Products
+              Our Product Portfolio
             </h2>
-            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
-              Premium Quality Exports
+            <p className="text-slate-800 font-semibold text-base tracking-widest uppercase">
+              We Specialize In Sourcing And Exporting
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {[
-              {
-                icon: "mango",
-                title: "Fresh Fruits",
-                desc: "Wide variety of premium quality fruits sourced from the finest farms across India",
-                clickable: true,
-              },
-              {
-                icon: "cabbage",
-                title: "Fresh Vegetables",
-                desc: "Farm-fresh vegetables with strict quality control and proper handling",
-                clickable: true,
-              },
-              {
-                icon: "🌍",
-                title: "Global Export",
-                desc: "Seamless export services with expertise in international trade regulations",
-              },
-              // {
-              //   icon: "📦",
-              //   title: "Packaging & Logistics",
-              //   desc: "Professional packaging ensuring optimal freshness during transit",
-              // },
-            ].map((service) => (
-              <div
-                key={service.title}
-                className={`bg-white p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 ${
-                  service.clickable
-                    ? "cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50"
-                    : ""
-                }`}
-                onClick={() =>
-                  service.clickable && setActiveProduct(service.title)
-                }
-              >
-                <div className="text-5xl mb-6">
-                  {service.icon === "mango" ? (
-                    <img
-                      src={Mango}
-                      className="w-20 h-20 mx-auto"
-                      alt="Mango"
-                    />
-                  ) : service.icon === "cabbage" ? (
-                    <img
-                      src={cabbage}
-                      className="w-20 h-20 mx-auto"
-                      alt="Cabbage"
-                    />
-                  ) : (
-                    service.icon
+          <div className="bg-white rounded-2xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "mango",
+                  title: "Fresh Fruits",
+                  desc: "Wide variety of premium quality fruits sourced from the finest farms across India",
+                  clickable: true,
+                },
+                {
+                  icon: "cabbage",
+                  title: "Fresh Vegetables",
+                  desc: "Farm-fresh vegetables with strict quality control and proper handling",
+                  clickable: true,
+                },
+                {
+                  icon: "textile",
+                  title: "Readymade Garments & Textiles",
+                  desc: "Trend-driven apparel and high-quality fabrics tailored to global markets",
+                },
+                {
+                  icon: "footwear",
+                  title: "Footwear",
+                  desc: "Stylish, durable, and cost-effective footwear solutions",
+                },
+                {
+                  icon: "jewelry",
+                  title: "Imitation Jewellery",
+                  desc: "Elegant and contemporary designs crafted to meet international fashion trends",
+                },
+                {
+                  icon: "export",
+                  title: "Global Export",
+                  desc: "Seamless export services with expertise in international trade regulations",
+                },
+              ].map((service) => (
+                <div
+                  key={service.title}
+                  className={`relative p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 overflow-hidden ${
+                    service.clickable
+                      ? "cursor-pointer hover:-translate-y-2 hover:shadow-2xl hover:shadow-slate-200/50"
+                      : "hover:-translate-y-1 hover:shadow-lg"
+                  }`}
+                  style={
+                    service.icon === "mango"
+                      ? {
+                          backgroundImage: `url(${Mango})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                        }
+                      : service.icon === "cabbage"
+                        ? {
+                            backgroundImage: `url(${cabbage})`,
+                            backgroundSize: "cover",
+                            backgroundPosition: "center",
+                          }
+                        : service.icon === "textile"
+                          ? {
+                              backgroundImage: `url(${textile})`,
+                              backgroundSize: "cover",
+                              backgroundPosition: "center",
+                            }
+                          : service.icon === "footwear"
+                            ? {
+                                backgroundImage: `url(${footwear})`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center",
+                              }
+                            : service.icon === "jewelry"
+                              ? {
+                                  backgroundImage: `url(${jewelry})`,
+                                  backgroundSize: "cover",
+                                  backgroundPosition: "center",
+                                }
+                              : service.icon === "export"
+                                ? {
+                                    backgroundImage: `url(${export1})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                  }
+                                : {}
+                  }
+                  onClick={() =>
+                    service.clickable && setActiveProduct(service.title)
+                  }
+                >
+                  {(service.icon === "mango" ||
+                    service.icon === "cabbage" ||
+                    service.icon === "textile" ||
+                    service.icon === "footwear" ||
+                    service.icon === "jewelry" ||
+                    service.icon === "export") && (
+                    <div className="absolute inset-0 bg-white/80"></div>
                   )}
+                  <div className="relative z-10">
+                    {service.icon &&
+                      service.icon !== "mango" &&
+                      service.icon !== "cabbage" &&
+                      service.icon !== "textile" &&
+                      service.icon !== "footwear" &&
+                      service.icon !== "jewelry" &&
+                      service.icon !== "export" && (
+                        <div className="text-5xl mb-6">{service.icon}</div>
+                      )}
+                    <h3 className="text-xl font-bold text-slate-800 mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-base leading-relaxed text-slate-600">
+                      {service.desc}
+                    </p>
+                    {service.clickable && (
+                      <p className="text-sm text-slate-800 font-semibold mt-4">
+                        Click to view details →
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-800 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-base leading-relaxed text-slate-600">
-                  {service.desc}
-                </p>
-                {service.clickable && (
-                  <p className="text-sm text-blue-700 font-semibold mt-4">
-                    Click to view details →
-                  </p>
-                )}
-              </div>
-            ))}
+              ))}
+            </div>
+            <p className="text-center text-lg text-slate-600 mt-8 italic">
+              And More - We continuously expand our portfolio based on market
+              demand and client requirements.
+            </p>
           </div>
         </div>
       </section>
@@ -574,7 +723,7 @@ function App() {
                   {selectedFruit && (
                     <button
                       onClick={() => setSelectedFruit(null)}
-                      className="text-sm text-blue-700 hover:text-blue-800 font-medium"
+                      className="text-sm text-slate-800 hover:text-indigo-800 font-medium"
                     >
                       ← Back to list
                     </button>
@@ -625,7 +774,7 @@ function App() {
                   </div>
                 )}
                 {selectedFruit && fruitInfo[selectedFruit] && (
-                  <div className="p-6 bg-linear-to-r from-red-50 to-orange-50 rounded-xl border-2 border-blue-200 animate-fade-in">
+                  <div className="p-6 bg-linear-to-r from-red-50 to-orange-50 rounded-xl border-2 border-indigo-200 animate-fade-in">
                     <h4 className="text-2xl font-bold text-slate-800 mb-3">
                       {selectedFruit}
                     </h4>
@@ -679,7 +828,7 @@ function App() {
                   </div>
                 )}
                 {!selectedFruit && (
-                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <p className="text-center text-slate-800 font-semibold p-4 bg-indigo-50 rounded-xl border border-indigo-100">
                     Click on any fruit to view detailed information!
                   </p>
                 )}
@@ -711,7 +860,7 @@ function App() {
                   {selectedVegetable && (
                     <button
                       onClick={() => setSelectedVegetable(null)}
-                      className="text-sm text-blue-700 hover:text-blue-800 font-medium"
+                      className="text-sm text-slate-800 hover:text-indigo-800 font-medium"
                     >
                       ← Back to list
                     </button>
@@ -766,7 +915,7 @@ function App() {
                   </div>
                 )}
                 {selectedVegetable && vegetableInfo[selectedVegetable] && (
-                  <div className="p-6 bg-linear-to-r from-green-50 to-lime-50 rounded-xl border-2 border-blue-200 animate-fade-in">
+                  <div className="p-6 bg-linear-to-r from-green-50 to-lime-50 rounded-xl border-2 border-indigo-200 animate-fade-in">
                     <h4 className="text-2xl font-bold text-slate-800 mb-3">
                       {selectedVegetable}
                     </h4>
@@ -820,7 +969,7 @@ function App() {
                   </div>
                 )}
                 {!selectedVegetable && (
-                  <p className="text-center text-blue-700 font-semibold p-4 bg-blue-50 rounded-xl border border-blue-100">
+                  <p className="text-center text-slate-800 font-semibold p-4 bg-indigo-50 rounded-xl border border-indigo-100">
                     Click on any vegetable to view detailed information!
                   </p>
                 )}
@@ -831,44 +980,62 @@ function App() {
       )}
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-24 bg-white">
+      <section id="why-us" className="py-24 bg-white/40">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
               Why Choose Us
             </h2>
-            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
+            <p className="text-slate-800 font-semibold text-base tracking-widest uppercase">
               The East Asia Advantage
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                number: "01",
-                title: "Extensive Experience",
-                desc: "Over 20 years in the industry with proven track record",
-              },
-              {
-                number: "02",
-                title: "Quality Commitment",
-                desc: "Strict quality control measures at every stage",
-              },
-              {
-                number: "03",
-                title: "Innovation",
-                desc: "Continuous R&D to improve packaging and product transport",
-              },
-              {
-                number: "04",
-                title: "Compliant",
-                desc: "Follow strict standards to ensure top quality",
-              },
-            ].map((item) => (
-              <div key={item.number} className="flex gap-6">
-                <div className="text-5xl font-extrabold text-blue-700/10 leading-none min-w-15">
-                  {item.number}
-                </div>
-                <div>
+          <div className="bg-white rounded-2xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  number: "01",
+                  title: "Four Decades of Trusted Experience",
+                  desc: "Serving global markets since 1978 with proven track record",
+                },
+                {
+                  number: "02",
+                  title: "Extensive Supplier Network",
+                  desc: "Robust supplier network across India for best sourcing",
+                },
+                {
+                  number: "03",
+                  title: "Quality Assurance & Compliance",
+                  desc: "Strict quality control measures meeting global standards",
+                },
+                {
+                  number: "04",
+                  title: "Competitive Pricing",
+                  desc: "Cost efficiency without compromising on quality",
+                },
+                {
+                  number: "05",
+                  title: "Timely Delivery",
+                  desc: "Reliable logistics support ensuring on-time delivery",
+                },
+                {
+                  number: "06",
+                  title: "Transparent Practices",
+                  desc: "Honest and transparent business dealings",
+                },
+                {
+                  number: "07",
+                  title: "Customized Solutions",
+                  desc: "Tailored solutions for every client's unique needs",
+                },
+              ].map((item) => (
+                <div
+                  key={item.number}
+                  className="p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg"
+                >
+                  <div className="text-5xl font-extrabold text-slate-800/20 mb-4">
+                    {item.number}
+                  </div>
                   <h3 className="text-xl font-bold text-slate-800 mb-2">
                     {item.title}
                   </h3>
@@ -876,110 +1043,233 @@ function App() {
                     {item.desc}
                   </p>
                 </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Vision Section */}
+      <section className="py-24 bg-white/40">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
+              Our Mission & Vision
+            </h2>
+            <p className="text-slate-800 font-semibold text-base tracking-widest uppercase">
+              Driving Excellence In Global Trade
+            </p>
+          </div>
+          <div className="bg-white rounded-2xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+                <div className="text-5xl mb-4">
+                  <svg
+                    className="w-12 h-12 mx-auto text-emerald-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle cx="12" cy="12" r="10" strokeWidth={1.5} />
+                    <circle cx="12" cy="12" r="6" strokeWidth={1.5} />
+                    <circle cx="12" cy="12" r="2" strokeWidth={1.5} />
+                    <line x1="12" y1="2" x2="12" y2="6" strokeWidth={1.5} />
+                    <line x1="12" y1="18" x2="12" y2="22" strokeWidth={1.5} />
+                    <line x1="2" y1="12" x2="6" y2="12" strokeWidth={1.5} />
+                    <line x1="18" y1="12" x2="22" y2="12" strokeWidth={1.5} />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">
+                  Our Mission
+                </h3>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  To promote Indian products globally by delivering value-driven
+                  sourcing and export solutions while building long-term
+                  partnerships based on trust, quality, and reliability.
+                </p>
               </div>
-            ))}
+              <div className="p-10 rounded-2xl text-center transition-all duration-300 border border-slate-200 hover:-translate-y-1 hover:shadow-lg">
+                <div className="text-5xl mb-4">
+                  <svg
+                    className="w-12 h-12 mx-auto text-emerald-700"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.5}
+                      d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-800 mb-4">
+                  Our Vision
+                </h3>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  To become a leading global trade partner recognized for
+                  excellence in sourcing, exporting, and customer satisfaction.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 bg-slate-50/80">
-        <div className="max-w-7xl mx-auto px-8 ">
+      <section id="contact" className="py-24 bg-white/40">
+        <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-4 tracking-tight">
-              Get In Touch
+              Let's Grow Together
             </h2>
-            <p className="text-amber-700 font-semibold text-base tracking-widest uppercase">
-              Let's Build a Connection
+            <p className="text-xl text-slate-600 mb-4 leading-relaxed max-w-4xl mx-auto">
+              Whether you are an importer seeking quality products from India or
+              a business looking for a reliable sourcing partner, East Asia
+              Group of Companies is here to support your growth.
+            </p>
+            <p className="text-slate-800 font-semibold text-base tracking-widest uppercase">
+              Get In Touch With Us
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              {[
-                {
-                  icon: "📍",
-                  title: "Location",
-                  content:
-                    "1st Floor, 50 Manish Market, Mata Ramabai Ambedkar Marg (Palton Road), Mumbai 400 001. INDIA",
-                },
-                {
-                  icon: "📧",
-                  title: "Email",
-                  content: (
-                    <>
-                      <a
-                        href="mailto:eat@eastasiatrading.com"
-                        className="text-blue-700 hover:underline"
+          <div className="bg-white rounded-2xl p-8">
+            <div className="grid md:grid-cols-2 gap-16">
+              <div className="space-y-8">
+                {[
+                  {
+                    icon: (
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        eat@eastasiatrading.com
-                      </a>{" "}
-                      and{" "}
-                      <a
-                        href="mailto:eat@vsnl.com"
-                        className="text-blue-700 hover:underline"
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    ),
+                    title: "Location",
+                    content:
+                      "1st Floor, 50 Manish Market, Mata Ramabai Ambedkar Marg (Palton Road), Mumbai 400 001. INDIA",
+                  },
+                  {
+                    icon: (
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
                       >
-                        eat@vsnl.com
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    ),
+                    title: "Email",
+                    content: (
+                      <>
+                        <a
+                          href="mailto:eat@eastasiatrading.com"
+                          className="text-slate-800 hover:underline"
+                        >
+                          eat@eastasiatrading.com
+                        </a>{" "}
+                        and{" "}
+                        <a
+                          href="mailto:eat@vsnl.com"
+                          className="text-slate-800 hover:underline"
+                        >
+                          eat@vsnl.com
+                        </a>
+                      </>
+                    ),
+                  },
+                  {
+                    icon: (
+                      <svg
+                        className="w-6 h-6"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                    ),
+                    title: "Phone",
+                    content: (
+                      <a
+                        href="tel:+91-22-22641122"
+                        className="text-slate-800 hover:underline"
+                      >
+                        +91-22-2264 1122
                       </a>
-                    </>
-                  ),
-                },
-                {
-                  icon: "📞",
-                  title: "Phone",
-                  content: (
-                    <a
-                      href="tel:+91-22-22641122"
-                      className="text-blue-700 hover:underline"
-                    >
-                      +91-22-2264 1122
-                    </a>
-                  ),
-                },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-6 items-start">
-                  <div className="text-4xl bg-blue-700 text-white w-14 h-14 rounded-full flex items-center justify-center shrink-0">
-                    {item.icon}
+                    ),
+                  },
+                ].map((item) => (
+                  <div key={item.title} className="flex gap-6 items-start">
+                    <div className="bg-emerald-700 text-white w-14 h-14 rounded-full flex items-center justify-center shrink-0">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="text-base font-bold text-slate-800 mb-1">
+                        {item.title}
+                      </h4>
+                      <p className="text-base leading-relaxed text-slate-600">
+                        {item.content}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-base font-bold text-slate-800 mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-base leading-relaxed text-slate-600">
-                      {item.content}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="bg-white p-10 rounded-2xl shadow-xl shadow-slate-200/50">
-              <form className="space-y-4">
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
-                />
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
-                />
-                <input
-                  type="text"
-                  placeholder="Subject"
-                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors"
-                />
-                <textarea
-                  placeholder="Your Message"
-                  rows="5"
-                  className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium focus:outline-none focus:border-blue-700 transition-colors resize-vertical min-h-30"
-                ></textarea>
-                <button
-                  type="submit"
-                  className="w-full px-8 py-3.5 text-base font-semibold text-white rounded-full bg-blue-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  Send Message
-                </button>
-              </form>
+                ))}
+              </div>
+              <div className="bg-white p-10 rounded-2xl shadow-xl">
+                <form className="space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium text-slate-800 focus:outline-none focus:border-emerald-700 transition-colors"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium text-slate-800 focus:outline-none focus:border-emerald-700 transition-colors"
+                  />
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium text-slate-800 focus:outline-none focus:border-emerald-700 transition-colors"
+                  />
+                  <textarea
+                    placeholder="Your Message"
+                    rows="5"
+                    className="w-full px-4 py-3.5 border-2 border-slate-200 rounded-xl text-base font-medium text-slate-800 focus:outline-none focus:border-emerald-700 transition-colors resize-vertical min-h-30"
+                  ></textarea>
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-3.5 text-base font-semibold text-white rounded-full bg-emerald-700 shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
