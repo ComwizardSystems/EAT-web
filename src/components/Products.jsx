@@ -19,51 +19,81 @@ const PRODUCT_CARDS = [
   {
     id: "fruits",
     title: "Fresh Fruits",
+    subtitle: "Premium Quality",
     description:
       "Wide variety of premium quality fruits sourced from the finest farms across India",
     image: Mango,
+    imageAlt: "Fresh mango",
     clickable: true,
     modalKey: "fruits",
+    icon: "",
+    badge: "Best Seller",
+    gradient: "from-rose-500 to-orange-500",
   },
   {
     id: "vegetables",
     title: "Fresh Vegetables",
+    subtitle: "Farm Fresh",
     description:
       "Farm-fresh vegetables with strict quality control and proper handling",
     image: cabbage,
+    imageAlt: "Fresh cabbage",
     clickable: true,
     modalKey: "vegetables",
+    icon: "",
+    badge: "Organic",
+    gradient: "from-emerald-500 to-teal-500",
   },
   {
     id: "textiles",
     title: "Readymade Garments & Textiles",
+    subtitle: "Premium Fabrics",
     description:
       "Trend-driven apparel and high-quality fabrics tailored to global markets",
     image: textile,
+    imageAlt: "Textile fabrics",
     clickable: false,
+    icon: "",
+    badge: "New Arrival",
+    gradient: "from-blue-500 to-indigo-600",
   },
   {
     id: "footwear",
     title: "Footwear",
+    subtitle: "Durable & Stylish",
     description: "Stylish, durable, and cost-effective footwear solutions",
     image: footwear,
+    imageAlt: "Footwear collection",
     clickable: false,
+    icon: "",
+    badge: "Popular",
+    gradient: "from-amber-500 to-orange-600",
   },
   {
     id: "jewelry",
     title: "Imitation Jewellery",
+    subtitle: "Elegant Designs",
     description:
       "Elegant and contemporary designs crafted to meet international fashion trends",
     image: jewelry,
+    imageAlt: "Jewelry collection",
     clickable: false,
+    icon: "",
+    badge: "Trending",
+    gradient: "from-purple-500 to-pink-500",
   },
   {
     id: "export",
     title: "Global Export",
+    subtitle: "Worldwide Delivery",
     description:
       "Seamless export services with expertise in international trade regulations",
     image: export1,
+    imageAlt: "Global export",
     clickable: false,
+    icon: "",
+    badge: "Trusted",
+    gradient: "from-cyan-500 to-blue-600",
   },
 ];
 
@@ -85,20 +115,49 @@ export default function Products() {
   );
 
   return (
-    <section id="services" className="py-24 md:py-32 bg-slate-50/60">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section
+      id="services"
+      className="relative py-24 md:py-32 bg-linear-to-b from-slate-50/60 to-white overflow-hidden"
+    >
+      {/* Decorative background elements */}
+      <AnimatedSection animation="fade" delay={0} duration={1000}>
+        <div
+          className="absolute top-40 left-0 w-150 h-150 rounded-full opacity-10"
+          style={{
+            background:
+              "radial-linear(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%)",
+            filter: "blur(80px)",
+          }}
+          aria-hidden="true"
+        />
+      </AnimatedSection>
+
+      <AnimatedSection animation="fade" delay={200} duration={1000}>
+        <div
+          className="absolute bottom-40 right-0 w-125 h-125 rounded-full opacity-10"
+          style={{
+            background:
+              "radial-linear(circle, rgba(251, 146, 60, 0.3) 0%, transparent 70%)",
+            filter: "blur(70px)",
+          }}
+          aria-hidden="true"
+        />
+      </AnimatedSection>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <SectionHeader
           title="Our Product Portfolio"
           subtitle="We Specialize In Sourcing And Exporting"
+          description="Discover our wide range of premium quality products"
         />
 
-        {/* Card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {/* Beautiful card grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {PRODUCT_CARDS.map((card, index) => (
             <AnimatedSection
               key={card.id}
               animation="fade-up"
-              delay={index * 80}
+              delay={index * 100}
             >
               <div
                 role={card.clickable ? "button" : undefined}
@@ -114,50 +173,120 @@ export default function Products() {
                   }
                 }}
                 className={`
-                  group relative overflow-hidden rounded-2xl
-                  border border-slate-200/80 shadow-sm
-                  transition-all duration-300
+                  group relative h-full rounded-3xl overflow-hidden
+                  border border-white/60 shadow-xl shadow-slate-200/50
+                  transition-all duration-500
                   ${
                     card.clickable
-                      ? "cursor-pointer hover:shadow-xl hover:shadow-emerald-100/50 hover:-translate-y-2"
-                      : "hover:shadow-lg hover:-translate-y-1"
+                      ? "cursor-pointer hover:shadow-2xl hover:shadow-emerald-100/50 hover:-translate-y-3"
+                      : "hover:shadow-xl hover:-translate-y-2"
                   }
                 `}
               >
-                {/* Background image */}
+                {/* Background image with linear overlay */}
                 <div className="absolute inset-0">
                   <img
                     src={card.image}
                     alt=""
                     aria-hidden="true"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     loading="lazy"
                   />
+                  <div className="absolute inset-0 bg-linear-to-t from-slate-900/90 via-slate-900/60 to-slate-900/40" />
+                  <div className="absolute inset-0 bg-linear-to-br from-white/15 to-transparent" />
                 </div>
 
-                {/* White overlay */}
-                <div className="absolute inset-0 bg-white/82 group-hover:bg-white/75 transition-colors duration-300" />
-
-                {/* Top accent line for clickable cards */}
-                {card.clickable && (
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-emerald-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-                )}
+                {/* Top badge */}
+                <div className="absolute top-5 left-5 z-20">
+                  <div
+                    className={`
+                      inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
+                      bg-linear-to-r ${card.linear} text-white
+                      text-xs font-bold uppercase tracking-wider
+                      shadow-lg shadow-black/20
+                      backdrop-blur-sm
+                    `}
+                  >
+                    {card.icon}
+                    <span>{card.badge}</span>
+                  </div>
+                </div>
 
                 {/* Content */}
-                <div className="relative z-10 p-8 md:p-10 text-center">
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">
-                    {card.title}
-                  </h3>
+                <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-80">
+                  <div>
+                    {/* Icon */}
+                    <div
+                      className={`
+                        inline-flex items-center justify-center w-16 h-16 rounded-2xl
+                        bg-white/20 backdrop-blur-md text-3xl mb-6
+                        shadow-lg shadow-black/10
+                        group-hover:scale-110 group-hover:bg-white/30
+                        transition-all duration-500
+                      `}
+                    >
+                      {card.icon}
+                    </div>
 
-                  <p className="text-base text-slate-600 leading-relaxed">
-                    {card.description}
-                  </p>
+                    {/* Title */}
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:translate-x-1 transition-transform duration-300">
+                      {card.title}
+                    </h3>
 
-                  {card.clickable && (
-                    <span className="inline-flex items-center gap-1.5 mt-5 text-sm font-semibold text-emerald-700 group-hover:gap-2.5 transition-all duration-300">
-                      View details
+                    {/* Subtitle */}
+                    <p
+                      className={`
+                        text-sm font-semibold uppercase tracking-wider mb-4
+                        bg-linear-to-r ${card.linear} bg-clip-text text-transparent
+                      `}
+                    >
+                      {card.subtitle}
+                    </p>
+
+                    {/* Description */}
+                    <p className="text-base text-slate-200 leading-relaxed mb-6">
+                      {card.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom section */}
+                  <div className="flex items-center justify-between">
+                    {card.clickable ? (
+                      <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-300">
+                        View details
+                        <svg
+                          className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                          />
+                        </svg>
+                      </div>
+                    ) : (
+                      <div className="flex items-center gap-2 text-slate-300 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                        Available
+                      </div>
+                    )}
+
+                    {/* Decorative arrow */}
+                    <div
+                      className={`
+                        w-12 h-12 rounded-full
+                        bg-white/20 backdrop-blur-md
+                        flex items-center justify-center
+                        group-hover:bg-white/40 group-hover:scale-110
+                        transition-all duration-300
+                      `}
+                    >
                       <svg
-                        className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                        className="w-6 h-6 text-white group-hover:rotate-45 transition-transform duration-300"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={2.5}
@@ -166,23 +295,52 @@ export default function Products() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                          d="M12 4.5v15m7.5-7.5h-15"
                         />
                       </svg>
-                    </span>
-                  )}
+                    </div>
+                  </div>
                 </div>
+
+                {/* linear border on hover */}
+                <div
+                  className={`
+                    absolute inset-0 rounded-3xl
+                    bg-linear-to-br ${card.linear}
+                    opacity-0 group-hover:opacity-100
+                    transition-opacity duration-500
+                  `}
+                  style={{ zIndex: -1 }}
+                />
+
+                {/* Shine effect */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.3) 0%, transparent 50%)",
+                  }}
+                  aria-hidden="true"
+                />
               </div>
             </AnimatedSection>
           ))}
         </div>
 
-        {/* Footer note */}
-        <AnimatedSection animation="fade-up" delay={500}>
-          <p className="mt-10 text-center text-lg text-slate-500 italic">
-            And more — we continuously expand our portfolio based on market
-            demand and client requirements.
-          </p>
+        {/* Beautiful footer note */}
+        <AnimatedSection animation="fade-up" delay={600}>
+          <div className="mt-16 text-center">
+            <div className="relative inline-block">
+              <div
+                className="absolute inset-0 bg-linear-to-r from-emerald-500 to-amber-500 opacity-20 blur-2xl"
+                aria-hidden="true"
+              />
+              <p className="relative text-lg md:text-xl text-slate-600 italic font-medium">
+                And more — we continuously expand our portfolio based on market
+                demand and client requirements.
+              </p>
+            </div>
+          </div>
         </AnimatedSection>
       </div>
 
