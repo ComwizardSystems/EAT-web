@@ -106,6 +106,17 @@ export default function Hero() {
                 </span>
               </span>
               <span className="relative inline-block">
+                <span
+                  className="absolute inset-0 from-emerald-200 to-amber-300 bg-clip-text blur-sm opacity-50"
+                  aria-hidden="true"
+                >
+                  & Vegetables
+                </span>
+                <span className="relative z-10 block from-emerald-500 to-amber-600 bg-clip-text">
+                  & Vegetables
+                </span>
+              </span>
+              {/* <span className="relative inline-block">
                 <span className="relative z-10 from-emerald-500 to-amber-600 bg-clip-text">
                   & Vegetables
                 </span>
@@ -113,7 +124,7 @@ export default function Hero() {
                   className="absolute -bottom-2 left-0 w-full h-4 bg-linear-to-r from-emerald-200/60 to-emerald-300/60 rounded-lg z-0 blur-sm"
                   aria-hidden="true"
                 />
-              </span>
+              </span>*/}
               <span className="relative inline-block mt-3">
                 <span
                   className="absolute inset-0 from-emerald-200 to-amber-300 bg-clip-text blur-sm opacity-50"
