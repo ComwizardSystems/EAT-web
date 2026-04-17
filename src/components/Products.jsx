@@ -117,7 +117,7 @@ export default function Products() {
   return (
     <section
       id="services"
-      className="relative py-24 md:py-32 bg-linear-to-b from-slate-50/60 to-white overflow-hidden"
+      className="relative p-6 bg-linear-to-b from-slate-50/60 to-white overflow-hidden"
     >
       {/* Decorative background elements */}
       <AnimatedSection animation="fade" delay={0} duration={1000}>
@@ -196,50 +196,16 @@ export default function Products() {
                   <div className="absolute inset-0 bg-linear-to-br from-white/15 to-transparent" />
                 </div>
 
-                {/* Top badge */}
-                <div className="absolute top-5 left-5 z-20">
-                  <div
-                    className={`
-                      inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full
-                      bg-linear-to-r ${card.linear} text-white
-                      text-xs font-bold uppercase tracking-wider
-                      shadow-lg shadow-black/20
-                      backdrop-blur-sm
-                    `}
-                  >
-                    {card.icon}
-                    <span>{card.badge}</span>
-                  </div>
-                </div>
-
                 {/* Content */}
                 <div className="relative z-10 p-8 md:p-10 h-full flex flex-col justify-between min-h-80">
                   <div>
-                    {/* Icon */}
-                    <div
-                      className={`
-                        inline-flex items-center justify-center w-16 h-16 rounded-2xl
-                        bg-white/20 backdrop-blur-md text-3xl mb-6
-                        shadow-lg shadow-black/10
-                        group-hover:scale-110 group-hover:bg-white/30
-                        transition-all duration-500
-                      `}
-                    >
-                      {card.icon}
-                    </div>
-
                     {/* Title */}
                     <h3 className="text-2xl md:text-3xl font-bold text-white mb-2 group-hover:translate-x-1 transition-transform duration-300">
                       {card.title}
                     </h3>
 
                     {/* Subtitle */}
-                    <p
-                      className={`
-                        text-sm font-semibold uppercase tracking-wider mb-4
-                        bg-linear-to-r ${card.linear} bg-clip-text text-transparent
-                      `}
-                    >
+                    <p className="text-sm font-semibold uppercase tracking-wider mb-4 text-white">
                       {card.subtitle}
                     </p>
 
@@ -250,43 +216,11 @@ export default function Products() {
                   </div>
 
                   {/* Bottom section */}
-                  <div className="flex items-center justify-between">
-                    {card.clickable ? (
-                      <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-300">
-                        View details
-                        <svg
-                          className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth={2.5}
-                          viewBox="0 0 24 24"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                          />
-                        </svg>
-                      </div>
-                    ) : (
-                      <div className="flex items-center gap-2 text-slate-300 font-medium">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                        Available
-                      </div>
-                    )}
-
-                    {/* Decorative arrow */}
-                    <div
-                      className={`
-                        w-12 h-12 rounded-full
-                        bg-white/20 backdrop-blur-md
-                        flex items-center justify-center
-                        group-hover:bg-white/40 group-hover:scale-110
-                        transition-all duration-300
-                      `}
-                    >
+                  {card.clickable ? (
+                    <div className="flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all duration-300">
+                      View details
                       <svg
-                        className="w-6 h-6 text-white group-hover:rotate-45 transition-transform duration-300"
+                        className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth={2.5}
@@ -295,11 +229,11 @@ export default function Products() {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M12 4.5v15m7.5-7.5h-15"
+                          d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
                         />
                       </svg>
                     </div>
-                  </div>
+                  ) : null}
                 </div>
 
                 {/* linear border on hover */}

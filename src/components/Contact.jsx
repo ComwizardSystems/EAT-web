@@ -149,7 +149,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-24 md:py-32 bg-linear-to-b from-white to-slate-50/60 overflow-hidden"
+      className="relative p-6 bg-linear-to-b from-white to-slate-50/60 overflow-hidden"
     >
       {/* Decorative background elements */}
       <AnimatedSection animation="fade" delay={0} duration={1000}>

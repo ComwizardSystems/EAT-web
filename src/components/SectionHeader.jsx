@@ -48,14 +48,12 @@ export default function SectionHeader({
             relative inline-block
           `}
         >
-          <span
-            className={`relative z-10 ${gradient} bg-clip-text text-transparent`}
-          >
+          <span className={`relative z-10 ${gradient} bg-clip-text`}>
             {title}
           </span>
           {/* Text shadow effect */}
           <span
-            className="absolute inset-0 bg-linear-to-r from-slate-200 to-slate-300 bg-clip-text text-transparent blur-sm opacity-50"
+            className="absolute inset-0 bg-linear-to-r from-slate-200 to-slate-300 bg-clip-text blur-sm opacity-50"
             aria-hidden="true"
           >
             {title}
@@ -70,7 +68,7 @@ export default function SectionHeader({
             className="absolute inset-0 bg-linear-to-r from-emerald-50 to-emerald-100/60 rounded-full opacity-60 blur-sm"
             aria-hidden="true"
           />
-          <p className="relative inline-block px-6 py-2 text-sm font-bold text-transparent bg-linear-to-r from-emerald-600 to-emerald-700 bg-clip-text uppercase tracking-widest">
+          <p className="relative inline-block px-6 py-2 text-sm font-bold bg-linear-to-r from-emerald-600 to-emerald-700 bg-clip-text uppercase tracking-widest">
             {subtitle}
           </p>
         </div>

@@ -98,9 +98,9 @@ export default function Footer() {
               {/* Logo and tagline */}
               <div className="mb-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
+                  {/* <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center shadow-lg shadow-emerald-500/30">
                     <span className="text-2xl">🌍</span>
-                  </div>
+                  </div>*/}
                   <div>
                     <h3 className="text-2xl font-bold tracking-tight">
                       East Asia Trading

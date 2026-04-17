@@ -74,7 +74,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-24 md:py-32 bg-linear-to-b from-white to-slate-50/60 overflow-hidden"
+      className="relative p-6 bg-linear-to-b from-white to-slate-50/60 overflow-hidden"
     >
       {/* Decorative background elements */}
       <AnimatedSection animation="fade" delay={0} duration={1000}>
@@ -107,6 +107,7 @@ export default function About() {
           title="About East Asia Group"
           subtitle="Your Trusted Partner in Global Trade"
           description="Four decades of excellence in connecting Indian quality with global markets"
+          gradient="from-emerald-500 to-amber-600"
         />
 
         {/* Welcome & Who We Are */}
@@ -137,10 +138,12 @@ export default function About() {
                   </svg>
                 </div>
 
-                <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Welcome to East Asia Group of Companies
+                <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                  <span className=" bg-clip-text bg-linear-to-r from-emerald-700 to-emerald-600">
+                    Welcome to East Asia Group of Companies
+                  </span>
                 </h3>
-                <p className="text-lg md:text-xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-emerald-600 to-emerald-700 mb-6">
+                <p className="text-lg md:text-xl font-semibold bg-clip-text bg-linear-to-r from-emerald-600 to-emerald-700 mb-6">
                   Your Trusted Partner in Global Trade from India Since 1978.
                 </p>
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed">
@@ -184,8 +187,10 @@ export default function About() {
               </div>
 
               <div className="relative z-10 text-center mt-2">
-                <h3 className="text-3xl font-bold text-slate-900 mb-4">
-                  Who We Are
+                <h3 className="text-3xl font-bold mb-4">
+                  <span className=" bg-clip-text bg-linear-to-r from-amber-600 to-amber-700">
+                    Who We Are
+                  </span>
                 </h3>
                 <p className="text-base md:text-lg text-slate-600 leading-relaxed">
                   We are a professionally managed group committed to delivering
@@ -219,8 +224,10 @@ export default function About() {
         {/* What We Do */}
         <AnimatedSection animation="fade-up" delay={100}>
           <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-              What We Do
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className=" bg-clip-text bg-linear-to-r from-teal-600 to-teal-700">
+                What We Do
+              </span>
             </h3>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
               Comprehensive trade solutions tailored to your business needs
