@@ -93,10 +93,20 @@ export default function Hero() {
 
           {/* Main heading with linear text */}
           <AnimatedSection animation="fade-up" delay={100} duration={700}>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold text-slate-900 leading-[1.05] tracking-tight mb-6">
-              <span className="block">Fresh Fruits</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 tracking-tight relative inline-block mb-6">
               <span className="relative inline-block">
-                <span className="relative z-10 bg-linear-to-r from-emerald-600 via-emerald-700 to-emerald-800 bg-clip-text text-transparent">
+                <span
+                  className="absolute inset-0 from-emerald-200 to-amber-300 bg-clip-text blur-sm opacity-50"
+                  aria-hidden="true"
+                >
+                  Fresh Fruits
+                </span>
+                <span className="relative z-10 block from-emerald-500 to-amber-600 bg-clip-text">
+                  Fresh Fruits
+                </span>
+              </span>
+              <span className="relative inline-block">
+                <span className="relative z-10 from-emerald-500 to-amber-600 bg-clip-text">
                   & Vegetables
                 </span>
                 <span
@@ -104,8 +114,16 @@ export default function Hero() {
                   aria-hidden="true"
                 />
               </span>
-              <span className="block mt-3 text-slate-800">
-                Import &amp; Export Excellence
+              <span className="relative inline-block mt-3">
+                <span
+                  className="absolute inset-0 from-emerald-200 to-amber-300 bg-clip-text blur-sm opacity-50"
+                  aria-hidden="true"
+                >
+                  Import &amp; Export Excellence
+                </span>
+                <span className="relative z-10 block from-emerald-500 to-amber-600 bg-clip-text">
+                  Import &amp; Export Excellence
+                </span>
               </span>
             </h1>
           </AnimatedSection>
@@ -228,7 +246,7 @@ export default function Hero() {
                 </div>
 
                 {/* Number */}
-                <div className="relative z-10 text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-linear-to-br from-emerald-600 to-emerald-800 leading-none mb-2 group-hover:scale-105 transition-transform duration-300">
+                <div className="relative z-10 text-4xl md:text-5xl font-extrabold bg-clip-text bg-linear-to-br from-emerald-600 to-emerald-800 leading-none mb-2 group-hover:scale-105 transition-transform duration-300">
                   {stat.number}
                 </div>
 
@@ -241,8 +259,8 @@ export default function Hero() {
           </div>
         </AnimatedSection>
 
-        {/* Scroll indicator */}
-        <AnimatedSection animation="fade" delay={800} duration={1000}>
+        {/* {/* Scroll indicator */}
+        {/*<AnimatedSection animation="fade" delay={800} duration={1000}>
           <div className="mt-20 flex justify-center">
             <button
               onClick={() => scrollTo("about")}
@@ -260,7 +278,7 @@ export default function Hero() {
               </div>
             </button>
           </div>
-        </AnimatedSection>
+        </AnimatedSection>*/}
       </div>
 
       {/* Bottom gradient fade */}

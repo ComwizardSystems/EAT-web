@@ -183,10 +183,7 @@ const ADVANTAGES = [
 
 export default function WhyChooseUs() {
   return (
-    <section
-      id="why-us"
-      className="relative py-24 md:py-32 bg-white overflow-hidden"
-    >
+    <section id="why-us" className="relative p-6  bg-white overflow-hidden">
       {/* Decorative background elements */}
       <AnimatedSection animation="fade" delay={0} duration={1000}>
         <div
@@ -269,7 +266,7 @@ export default function WhyChooseUs() {
                 />
 
                 {/* Icon container */}
-                <div className="relative z-10 mb-6">
+                <div className="relative z-10">
                   <div
                     className={`
                       inline-flex items-center justify-center w-20 h-20 rounded-2xl

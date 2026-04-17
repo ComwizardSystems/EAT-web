@@ -62,7 +62,7 @@ const CARDS = [
 
 export default function MissionVision() {
   return (
-    <section className="relative py-24 md:py-32 bg-linear-to-b from-slate-50/60 to-white overflow-hidden">
+    <section className="relative p-6 bg-linear-to-b from-slate-50/60 to-white overflow-hidden">
       {/* Decorative background elements */}
       <AnimatedSection animation="fade" delay={0} duration={1000}>
         <div
@@ -144,7 +144,7 @@ export default function MissionVision() {
                 </div>
 
                 {/* Icon container */}
-                <div className="relative z-10 mb-8 flex justify-center">
+                {/* <div className="relative z-10 mb-8 flex justify-center">
                   <div
                     className={`
                       relative inline-flex items-center justify-center w-28 h-28 rounded-3xl
@@ -154,7 +154,7 @@ export default function MissionVision() {
                       transition-all duration-500
                     `}
                   >
-                    {/* Decorative rings */}
+                    {/* Decorative rings /}
                     <div
                       className={`
                         absolute inset-0 rounded-3xl border-2 border-white/30
@@ -171,7 +171,7 @@ export default function MissionVision() {
                     />
                     {card.icon}
                   </div>
-                </div>
+                </div>*/}
 
                 {/* Title and subtitle */}
                 <div className="relative z-10 text-center mb-6">
@@ -181,7 +181,7 @@ export default function MissionVision() {
                   <p
                     className={`
                       text-sm font-semibold uppercase tracking-wider
-                      bg-linear-to-r ${card.linear} bg-clip-text text-transparent
+                      bg-linear-to-r ${card.linear} bg-clip-text
                     `}
                   >
                     {card.subtitle}
@@ -219,7 +219,7 @@ export default function MissionVision() {
                 </div>
 
                 {/* Corner decorations */}
-                <div className="absolute top-4 left-4 w-8 h-8">
+                {/* <div className="absolute top-4 left-4 w-8 h-8">
                   <svg
                     viewBox="0 0 32 32"
                     className={`
@@ -234,8 +234,8 @@ export default function MissionVision() {
                       fill="none"
                     />
                   </svg>
-                </div>
-                <div className="absolute bottom-4 right-4 w-8 h-8">
+                </div>*/}
+                {/* <div className="absolute bottom-4 right-4 w-8 h-8">
                   <svg
                     viewBox="0 0 32 32"
                     className={`
@@ -250,7 +250,7 @@ export default function MissionVision() {
                       fill="none"
                     />
                   </svg>
-                </div>
+                </div>*/}
               </div>
             </AnimatedSection>
           ))}
@@ -275,7 +275,7 @@ export default function MissionVision() {
               "
             >
               Partner With Us
-              <svg
+              {/* <svg
                 className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
@@ -287,7 +287,7 @@ export default function MissionVision() {
                   strokeLinejoin="round"
                   d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
                 />
-              </svg>
+              </svg>*/}
             </a>
           </div>
         </AnimatedSection>
