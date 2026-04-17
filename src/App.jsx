@@ -2,8 +2,9 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Products from "./components/Products";
+import Capabilities from "./components/Capabilities";
 import WhyChooseUs from "./components/WhyChooseUs";
-import MissionVision from "./components/MissionVision";
+import Stats from "./components/Stats";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -15,8 +16,9 @@ export default function App() {
         <Hero />
         <About />
         <Products />
+        <Capabilities />
         <WhyChooseUs />
-        <MissionVision />
+        <Stats />
         <Contact />
       </main>
       <Footer />
