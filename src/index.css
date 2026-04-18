@@ -552,7 +552,6 @@ p {
     /* Ensure images don't overflow */
     img {
         max-width: 100%;
-        height: auto;
     }
 }
 

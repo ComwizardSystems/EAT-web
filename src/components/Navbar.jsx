@@ -66,7 +66,7 @@ export default function Navbar() {
             <img
               src={LOGO}
               alt="East Asia Trading logo"
-              className="relative h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="relative h-8 sm:h-10 md:h-10 lg:h-12 w-auto max-w-35 sm:max-w-none object-contain transition-transform duration-300 group-hover:scale-105"
               loading="eager"
             />
           </div>
