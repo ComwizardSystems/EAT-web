@@ -150,11 +150,6 @@ export default function Capabilities() {
               delay={index * 100}
             >
               <div className="group relative h-full bg-white rounded-xl p-5 sm:p-8 border border-slate-100 hover:border-emerald-200 shadow-sm hover:shadow-xl hover:shadow-emerald-100/50 hover:-translate-y-2 transition-all duration-500">
-                {/* Step number */}
-                <div className="absolute top-4 right-4 text-6xl font-extrabold text-slate-50 group-hover:text-emerald-50 transition-colors duration-500 select-none">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
-
                 {/* Icon */}
                 <div className="relative z-10 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-linear-to-br from-emerald-500 to-emerald-600 text-white flex items-center justify-center shadow-lg shadow-emerald-500/20 mb-5 sm:mb-6 group-hover:scale-110 transition-transform duration-300">
                   {cap.icon}
